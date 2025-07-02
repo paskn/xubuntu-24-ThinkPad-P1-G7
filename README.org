@@ -1,3 +1,17 @@
+* Contents
+:PROPERTIES:
+:TOC:      :include all :force (ignore) :ignore (this) :local (depth)
+:END:
+:CONTENTS:
+- [[#contents][Contents]]
+- [[#touchpad][Touchpad]]
+- [[#xfce-and-ui][Xfce and UI]]
+- [[#solution-to-the-black-screen-after-closing-the-lid][Solution to the black screen after closing the lid:]]
+- [[#coonecting-a-bluetooth-headset][Coonecting a bluetooth headset]]
+- [[#unstable-wifi-connection-during-video-conferencing][Unstable WiFi connection during video conferencing]]
+- [[#disable-and-swap-capslock-with-control][Disable and swap Capslock with Control]]
+:END:
+
 * Touchpad
 I encountered only two issues: too fast and sensitive scrolling and
 palm detection. This laptop has a large touchpad and withouth a proper
