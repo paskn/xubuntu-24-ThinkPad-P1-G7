@@ -1,4 +1,4 @@
-Notes on setting up Xubuntu 24 on ThinkPad P1 Gen7.
+Notes on setting up Xubuntu 24 (Minimal) on ThinkPad P1 Gen7.
 
 * Contents
 :PROPERTIES:
