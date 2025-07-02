@@ -103,7 +103,6 @@ is likely with =pulseaudio=. Remove it and use =pipewire= as discussed
 here:
 https://askubuntu.com/questions/1479606/bluetooth-br-connection-profile-unavailable-issue-on-upgrade-to-xubuntu-23-04
 
-
 * Unstable WiFi connection during video conferencing
 In =/etc/NetworkManager/conf.d/default-wifi-powersave-on.conf= change
 =wifi.powersave= to =2=. Like this:
@@ -112,3 +111,24 @@ In =/etc/NetworkManager/conf.d/default-wifi-powersave-on.conf= change
 [connection]
 wifi.powersave = 2
 #+end_src
+
+* Disable and swap Capslock with Control
+
+In =/etc/default/keyboard=, change =XKBOPTIONS=:
+
+#+begin_src shell
+XKBOPTIONS="ctrl:nocaps,altwin:swap_alt_win"
+#+end_src
+
+The line above also swaps the windows key with Alt. Remove
+=,altwin:swap_alt_win= if you want to keep the the windows key.
+
+You can also swap keys in the current session with =setxkbmap=:
+
+#+begin_src shell
+setxkbmap -option ctrl:swapcaps
+#+end_src
+
+This will switch Control and Capslock. Hence, hitting Control will
+activate Capslock.
+
