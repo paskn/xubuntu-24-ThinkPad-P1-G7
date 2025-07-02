@@ -29,14 +29,13 @@ ID of your touch pad. To learn the id, use:
 xinput list
 #+end_src
 
-To make the change permanent, edit:
-=/usr/share/X11/xorg.conf.d/40-libinput.conf=
+3. To make the change permanent, edit:
+   =/usr/share/X11/xorg.conf.d/40-libinput.conf=.
 
 Find an etry for touchpad catchall and add a line =Option
 "ScrollPixelDistance" "40"=. Example:
 
-#+begin_quote
-
+#+begin_src shell
 Section "InputClass"
         Identifier "libinput touchpad catchall"
         MatchIsTouchpad "on"
@@ -44,8 +43,7 @@ Section "InputClass"
         Driver "libinput"
         Option "ScrollPixelDistance" "40"
 EndSection
-
-#+end_quote
+#+end_src
 
 Source: https://forums.linuxmint.com/viewtopic.php?t=412052 
 
