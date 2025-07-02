@@ -1,0 +1,51 @@
+* Touchpad
+I encountered only two issues: too fast and sensitive scrolling and
+palm detection. This laptop has a large touchpad and withouth a proper
+palm detection it can make typing very frustrating. Normally, the palm
+detection shouldn't be an issue unless you use =synaptics= drivers.
+AFAIK, by default Xubuntu 24 will use =libinput= and this shouldn't be
+a problem for most. I solved both my issues with =libinput=.
+
+1. Check whether libinput is driving your touch pad:
+
+#+begin_src shell
+grep -e "Using input driver 'libinput'" /var/log/Xorg.0.log
+#+end_src
+
+If touch pad is not listed there, then follow instructions for setting
+up =libinput= here:
+https://wiki.archlinux.org/title/Libinput
+
+2. Change scroll speed/sensitivity with
+   
+#+begin_src shell
+xinput set-prop 9 "libinput Scrolling Pixel Distance" 40
+#+end_src
+
+Use lower than 40 if it is too slow for you. Assuming that =9= is the
+ID of your touch pad. To learn the id, use:
+
+#+begin_src shell
+xinput list
+#+end_src
+
+To make the change permanent, edit:
+=/usr/share/X11/xorg.conf.d/40-libinput.conf=
+
+Find an etry for touchpad catchall and add a line =Option
+"ScrollPixelDistance" "40"=. Example:
+
+#+begin_quote
+
+Section "InputClass"
+        Identifier "libinput touchpad catchall"
+        MatchIsTouchpad "on"
+        MatchDevicePath "/dev/input/event*"
+        Driver "libinput"
+        Option "ScrollPixelDistance" "40"
+EndSection
+
+#+end_quote
+
+Source: https://forums.linuxmint.com/viewtopic.php?t=412052 
+
