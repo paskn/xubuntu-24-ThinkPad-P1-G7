@@ -47,3 +47,48 @@ EndSection
 
 Source: https://forums.linuxmint.com/viewtopic.php?t=412052 
 
+* Xfce and UI
+The screen on this laptop is HiDPI. Most likely, the UI and text will
+look too small. Here is what helped me to make it more legible.
+
+1. Set window scaling to =2=.
+
+   Run =Xfc4-apperance-settings=, open "Settings" tab. Set window
+   scaling to =2x=.
+
+2. Set font DPI to =80=.
+
+   In =Xfc4-apperance-settings=, open "Fonts" tab. Set "Custom DPI
+   setting" to =80=. Test smaller and larger DPI values to find the
+   what works best for you.
+
+Source:
+https://old.reddit.com/r/xfce/comments/x98vk7/1x_scale_too_small_but_2x_scale_too_large_on_14/
+
+Optional: consider a HiDPI compatible theme for Xfce in
+=Xfc4-apperance-settings=. One example is =Greybird= (shipped by
+default).
+
+3. Install both =qt5ct= and =qt6ct=.
+
+   Applications using QT for their GUI will not obey the sessings you
+   set up above. You can controll UI of these applications via =qt5ct=
+   and =qt6ct=. Unfortunately, you have to have both because there is
+   no application able to control both versions of QT.
+
+   #+begin_src shell
+     sudo apt update
+     sudo apt install qt5ct qt6ct -y
+   #+end_src
+
+To make them work properly, you have to set environment variable
+=QT_QPA_PLATFORMTHEME= to =qt5ct=. You set in
+=/etc/X11/Xsession.d/56xubuntu-session=.
+
+Source:
+https://askubuntu.com/questions/1398554/unable-to-change-qt-qpa-platformtheme-environment-variable
+
+In both =qt5ct= and =qt6ct=, change =style= to =gtk2= in the
+"Appearance" tab. In the "Fonts" tab, increase font size to what works
+for you. Right now, =20= works well for me.
+
