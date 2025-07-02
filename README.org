@@ -104,3 +104,11 @@ here:
 https://askubuntu.com/questions/1479606/bluetooth-br-connection-profile-unavailable-issue-on-upgrade-to-xubuntu-23-04
 
 
+* Unstable WiFi connection during video conferencing
+In =/etc/NetworkManager/conf.d/default-wifi-powersave-on.conf= change
+=wifi.powersave= to =2=. Like this:
+
+#+begin_src shell
+[connection]
+wifi.powersave = 2
+#+end_src
