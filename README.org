@@ -61,6 +61,27 @@ EndSection
 #+end_src
 
 Source: https://forums.linuxmint.com/viewtopic.php?t=412052 
+** Optional: Disable "Drag Lock"
+You may find yourself annoyed by inadvertently dragging objects instead
+of simply moving the mouse. It might be useful do disable "Drag Lock"
+in =/usr/share/X11/xorg.conf.d/40-libinput.conf=. Here is the snippet:
+
+#+begin_src shell
+Section "InputClass"
+        Identifier "libinput touchpad catchall"
+        MatchIsTouchpad "on"
+        MatchDevicePath "/dev/input/event*"
+        Driver "libinput"
+        Option "ScrollPixelDistance" "40"
+        Option "TappingDragLock" "off"
+        Option "TappingDrag" "off"        
+EndSection
+#+end_src
+
+May require rebooting to effect the change.
+
+** Optional: Gestures
+Out of the box touch pad gestures are not supported. 
 
 * Xfce and UI
 The screen on this laptop is HiDPI. Most likely, the UI and text will
