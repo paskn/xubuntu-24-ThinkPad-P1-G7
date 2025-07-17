@@ -47,7 +47,7 @@ xinput list
 3. To make the change permanent, edit:
    =/usr/share/X11/xorg.conf.d/40-libinput.conf=.
 
-Find an etry for touchpad catchall and add a line =Option
+Find an entry for touchpad catchall and add a line =Option
 "ScrollPixelDistance" "40"=. Example:
 
 #+begin_src shell
@@ -81,7 +81,7 @@ EndSection
 May require rebooting to effect the change.
 
 ** Optional: Gestures
-Out of the box touch pad gestures are not supported. 
+Out of the box touchpad gestures are not supported. 
 
 * Xfce and UI
 The screen on this laptop is HiDPI. Most likely, the UI and text will
@@ -128,13 +128,13 @@ In both =qt5ct= and =qt6ct=, change =style= to =gtk2= in the
 "Appearance" tab. In the "Fonts" tab, increase font size to what works
 for you. Right now, =20= works well for me.
 
-* Solution to the black screen after closing the lidx
+* Solution to the black screen after closing the lid
 
 If you have this issue, follow rchfox's solution here:
 https://forums.debian.net/viewtopic.php?t=160518
 
-* Coonecting a bluetooth headset
-You might get problems connecting a headset via bluetooth. The issue
+* Connecting a Bluetooth headset
+You might get problems connecting a headset via Bluetooth. The issue
 is likely with =pulseaudio=. Remove it and use =pipewire= as discussed
 here:
 https://askubuntu.com/questions/1479606/bluetooth-br-connection-profile-unavailable-issue-on-upgrade-to-xubuntu-23-04
