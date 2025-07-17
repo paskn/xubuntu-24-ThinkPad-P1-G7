@@ -148,6 +148,37 @@ In =/etc/NetworkManager/conf.d/default-wifi-powersave-on.conf= change
 wifi.powersave = 2
 #+end_src
 
+** Optional: disable IPv6
+On certain networks this might help improving the connection stability:
+
+- Click Wi-Fi icon on the panel near the battery;
+- Choose "edit connections";
+- Select the unstable network and click the gear icon "edit selected connection";
+- Open "IPv6 Settings";
+- In "Method" choose "Disabled";
+- Click "Save"
+  
+** Optional: Stick to 5-GHz channel
+
+Find your network's name:
+
+#+begin_src shell
+nmcli connection show
+#+end_src
+
+Change the default channel to 5-GHz:
+
+#+begin_src shell
+nmcli connection modify MyHomeWiFi wifi.band a
+#+end_src
+
+Restart:
+
+#+begin_src shell
+nmcli connection down MyHomeWiFi
+nmcli connection up MyHomeWiFi
+#+end_src
+
 * Disable and swap Capslock with Control
 
 In =/etc/default/keyboard=, change =XKBOPTIONS=:
