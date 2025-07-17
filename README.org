@@ -160,6 +160,14 @@ On certain networks this might help improving the connection stability:
   
 ** Optional: Stick to 5-GHz channel
 
+Your router might offer two channels: 2.4-GHz and 5-GHz. The Wi-Fi
+driver might be aggressively optimizing for the best connection, and
+constantly switching between the channels. For each such switch it
+would attempt to authenticate anew (you might see the window poping up
+asking for Wi-Fi password with the password already entered). This
+switching would interrupt, then, your video call. A solution to this
+is to stick to one channel.
+
 Find your network's name:
 
 #+begin_src shell
